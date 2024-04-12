@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'crypto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Learning_crypto_DB',
+        'USER': 'postgres',
+        'PASSWORD': 'qwerto87',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
