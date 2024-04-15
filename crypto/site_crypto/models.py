@@ -2,7 +2,6 @@ from django.db import models
 import os
 import uuid
 class Exchange (models.Model):
-
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
     location = models.CharField(max_length=250, verbose_name="Адрес биржы")
@@ -14,10 +13,15 @@ class Exchange (models.Model):
     class Meta:
         verbose_name = "Биржа"
         verbose_name_plural = "Биржи"
+
 class Assets (models.Model):
+    ASSET_TYPES = [
+        ('cryptocurrency', 'Cryptocurrency'),
+        ('fiat', 'Fiat'),]
+
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
-    type = models.enums(verbose_name="Тип актива")
+    type = models.CharField(max_length=20, verbose_name="Тип актива", choices=ASSET_TYPES)
     price = models.FloatField(verbose_name="Стоимость актива")
     def str(self):
         return self.name
@@ -27,4 +31,16 @@ class Assets (models.Model):
         
 class Deals (models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    asset = models.ForeignKey(Assets, on_delete=models.CASCADE)
+    buying_ID= models.ForeignKey(Exchange, related_name='buying_deals', on_delete=models.CASCADE)
+    selling_ID= models.ForeignKey(Exchange, related_name='selling_deals', on_delete=models.CASCADE)
+    buying = models.FloatField(verbose_name="Цена покупки")
+    selling = models.FloatField(verbose_name="Цена продажи")
+    profit = models.TimeField(verbose_name="Прибыль")
+    time = models.TimeField(verbose_name="Время сделки")
     
+    def str(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Сделки"
