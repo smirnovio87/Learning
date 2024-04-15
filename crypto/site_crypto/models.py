@@ -14,3 +14,17 @@ class Exchange (models.Model):
     class Meta:
         verbose_name = "Биржа"
         verbose_name_plural = "Биржи"
+class Assets (models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    name = models.CharField(max_length=20, verbose_name="Название Биржы")
+    type = models.enums(verbose_name="Тип актива")
+    price = models.FloatField(verbose_name="Стоимость актива")
+    def str(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Активы"
+        
+class Deals (models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    
