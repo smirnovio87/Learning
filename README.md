@@ -1,4 +1,8 @@
 # Learningpyh
+Запуск консоли Django:
+
+    python manage.py shell
+
 Для запуска проекта:
     1. Создать виртуальное окружение .venv , активировать его.
     2. Установить зависимости из файла req.txt командой pip install req.txt

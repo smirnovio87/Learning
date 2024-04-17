@@ -1,6 +1,10 @@
 from django.db import models
 import os
 import uuid
+
+ASSET_TYPES = [
+    ('cryptocurrency', 'Cryptocurrency'),
+    ('fiat', 'Fiat'),]
 class Exchange (models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
@@ -15,13 +19,9 @@ class Exchange (models.Model):
         verbose_name_plural = "Биржи"
 
 class Assets (models.Model):
-    ASSET_TYPES = [
-        ('cryptocurrency', 'Cryptocurrency'),
-        ('fiat', 'Fiat'),]
-
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
-    type = models.TextChoices(max_length=20, verbose_name="Тип актива", choices=ASSET_TYPES)
+    #type = models.TextChoices(verbose_name="Тип актива", choices=ASSET_TYPES)
     price = models.FloatField(verbose_name="Стоимость актива")
     def str(self):
         return self.name
