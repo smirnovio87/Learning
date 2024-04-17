@@ -21,7 +21,7 @@ class Assets (models.Model):
 
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
-    type = models.CharField(max_length=20, verbose_name="Тип актива", choices=ASSET_TYPES)
+    type = models.TextChoices(max_length=20, verbose_name="Тип актива", choices=ASSET_TYPES)
     price = models.FloatField(verbose_name="Стоимость актива")
     def str(self):
         return self.name
