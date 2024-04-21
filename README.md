@@ -1,7 +1,12 @@
 # Learningpyh
 Запуск консоли Django:
-
     python manage.py shell
+
+Создать миграцию
+    python manage.py makemigrations
+
+Применить миграцию
+    python manage.py migrate
 
 Для запуска проекта:
     1. Создать виртуальное окружение .venv , активировать его.

@@ -6,7 +6,8 @@ ASSET_TYPES = [
     ('cryptocurrency', 'Cryptocurrency'),
     ('fiat', 'Fiat'),]
 class Exchange (models.Model):
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    #uuid = models.UUIDField(primary_key=True)  #default=uuid.uuid4()
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
     location = models.CharField(max_length=250, verbose_name="Адрес биржы")
     trade_volume = models.FloatField(verbose_name="Объем торгов")
@@ -19,7 +20,7 @@ class Exchange (models.Model):
         verbose_name_plural = "Биржи"
 
 class Assets (models.Model):
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=20, verbose_name="Название Биржы")
     type = models.CharField(verbose_name="Тип актива", choices=ASSET_TYPES)
     price = models.FloatField(verbose_name="Стоимость актива")
@@ -30,7 +31,7 @@ class Assets (models.Model):
         verbose_name = "Активы"
         
 class Deals (models.Model):
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     asset = models.ForeignKey(Assets, on_delete=models.CASCADE)
     buying_ID= models.ForeignKey(Exchange, related_name='buying_deals', on_delete=models.CASCADE)
     selling_ID= models.ForeignKey(Exchange, related_name='selling_deals', on_delete=models.CASCADE)

@@ -1,26 +1,54 @@
 from django.shortcuts import render
 from django.template.response import TemplateResponse
 from .models import Exchange, Assets, Deals
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from .forms import AssetsForm, ExchangeForm, DealsForm
 
+
+# Отображаем Index
 def index(request):
     return TemplateResponse(request, 'index.html')
+
+# Отображаем forms
 def forms (request):
+    # Если это POST запрос нужно обработать данные, полученные из формы
     if request.method == 'POST':
+        # Создаем экземпляр формы и заполняем ее
         form = ExchangeForm(request.POST)
+        # Если форма верно заполнена сохраняем
+        print(dir(form))
+        print("////")
+        print(form)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect
+            # Перенаправляем на новый URL (Тут вопрос)
+            return HttpResponseRedirect(redirect_to="/")
+    #Создаем пустую форму    
     form=ExchangeForm()
     context={'form':form}
     return render(request, 'site_crypto/forms.html', context)
         
 
 def get_exchange(request):
-    table=Exchange.objects.in_bulk()
+    table=Exchange.objects.all()
+    name=Exchange.objects.get(name="ByBit")
+    out={}
+    namenew = name.__dict__
+    # print(type(namenew))
+    for i in namenew.items():
+        out[i[0]] = str(i[1])
+    print(out)
+    
+    # for i, q  in name.__dict__:
+    #     out[i]=q
     # return table
-    return HttpResponse(table)
+    # print(out)
+    # print(dir(name))
+
+    # print(name.__dict__)
+    # print(namenew.items(), namenew.keys())
+    return JsonResponse(out)
     
 # Create your views here.

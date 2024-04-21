@@ -4,6 +4,7 @@ class ExchangeForm(forms.ModelForm):
     class Meta:
         model = Exchange
         fields = ['name', 'location', 'trade_volume']
+        #fields = '__all__'
     
 class AssetsForm(forms.ModelForm):
     class Meta:
