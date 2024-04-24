@@ -50,5 +50,9 @@ def get_exchange(request):
     # print(name.__dict__)
     # print(namenew.items(), namenew.keys())
     return JsonResponse(out)
+def get_assets(request):
+    asset=Assets.objects.all()
+    context={"asset": asset}
+    return render(request, 'site_crypto/asset.html', context)
     
 # Create your views here.

@@ -1,6 +1,11 @@
+Создание виртуального окружения
+
 # Learningpyh
 Запуск консоли Django:
     python manage.py shell
+
+Супер пользователь админ
+    $ python manage.py createsuperuser
 
 Создать миграцию
     python manage.py makemigrations
