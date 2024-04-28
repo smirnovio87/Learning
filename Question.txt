@@ -1,0 +1,99 @@
+Ситауция:
+1. При запуске файла .py не вижу что происходит, по крайней мере при отпрвке запросов на биржу. Особенно не понятно когда бирж несколько или очень много параметров.
+2. Нужно добавить проверку на доступность биржи, правильный вохврат, если нет то записывать жанную биржу в отдельный файл и преходить к следующей
+ascendex	AscendEX	API Version 2		CCXT Pro 
+bequant	bequant	Bequant	API Version 3		CCXT Pro 
+bigone	bigone	BigONE	API Version 3		
+binance	binance	Binance	API Version *	CCXT Certified	CCXT Pro
+-- binancecoinm	binancecoinm	Binance COIN-M	API Version *	CCXT Certified	CCXT Pro --- ccxt.base.errors.BadSymbol: binancecoinm does not have market symbol BTC/USDT
+-- binanceus	binanceus	Binance US	API Version *		CCXT Pro
+binanceusdm	binanceusdm	Binance USDⓈ-M	API Version *	CCXT Certified	CCXT Pro
+bingx	bingx	BingX	API Version 1	CCXT Certified	CCXT Pro
+-- bit2c	bit2c	Bit2C	API Version *	--	ccxt.base.errors.BadSymbol: bit2c does not have market symbol BTC/USDT
+-- bitbank	bitbank	bitbank	API Version 1		
+bitbns	bitbns	Bitbns	API Version 2		
+bitfinex	bitfinex	Bitfinex	API Version 1		CCXT Pro
+
+bitfinex2	bitfinex2	Bitfinex	API Version 2		CCXT Pro
+bitflyer	bitflyer	bitFlyer	API Version 1		
+bitget	bitget	Bitget	API Version 2	CCXT Certified	CCXT Pro
+bithumb	bithumb	Bithumb	API Version *		CCXT Pro
+bitmart	bitmart	BitMart	API Version 2	CCXT Certified	CCXT Pro
+bitmex	bitmex	BitMEX	API Version 1	CCXT Certified	CCXT Pro
+bitopro	bitopro	BitoPro	API Version 3		CCXT Pro
+bitrue	bitrue	Bitrue	API Version 1		CCXT Pro
+bitso	bitso	Bitso	API Version 3		
+bitstamp	bitstamp	Bitstamp	API Version 2		CCXT Pro
+bitteam	bitteam	BIT.TEAM	API Version 2.0.6		
+bitvavo	bitvavo	Bitvavo	API Version 2		CCXT Pro
+bl3p	bl3p	BL3P	API Version 1		
+blockchaincom	blockchaincom	Blockchain.com	API Version 3		CCXT Pro
+blofin	blofin	BloFin	API Version 1		
+btcalpha	btcalpha	BTC-Alpha	API Version 1		
+btcbox	btcbox	BtcBox	API Version 1		
+btcmarkets	btcmarkets	BTC Markets	API Version 3		
+btcturk	btcturk	BTCTurk	API Version *		
+bybit	bybit	Bybit	API Version 5	CCXT Certified	CCXT Pro
+cex	cex	CEX.IO	API Version *		CCXT Pro
+coinbase	coinbase	Coinbase Advanced	API Version 2	CCXT Certified	CCXT Pro
+coinbaseinternational	coinbaseinternational	Coinbase International	API Version 1	CCXT Certified	CCXT Pro
+coinbasepro	coinbasepro	Coinbase Pro(Deprecated)	API Version *		CCXT Pro
+coincheck	coincheck	coincheck	API Version *		
+coinex	coinex	CoinEx	API Version 1	CCXT Certified	CCXT Pro
+coinlist	coinlist	Coinlist	API Version 1		
+coinmate	coinmate	CoinMate	API Version *		
+coinmetro	coinmetro	Coinmetro	API Version 1		
+coinone	coinone	CoinOne	API Version 2		
+coinsph	coinsph	Coins.ph	API Version 1		
+coinspot	coinspot	CoinSpot	API Version *		
+cryptocom	cryptocom	Crypto.com	API Version 2	CCXT Certified	CCXT Pro
+currencycom	currencycom	Currency.com	API Version 2		CCXT Pro
+delta	delta	Delta Exchange	API Version 2		
+deribit	deribit	Deribit	API Version 2		CCXT Pro
+digifinex	digifinex	DigiFinex	API Version 3		
+exmo	exmo	EXMO	API Version 1.1		
+fmfwio	fmfwio	FMFW.io	API Version 3		
+gate	gate	Gate.io	API Version 4	CCXT Certified	CCXT Pro
+gemini	gemini	Gemini	API Version 1		CCXT Pro
+hitbtc	hitbtc	HitBTC	API Version 3		
+hollaex	hollaex	HollaEx	API Version 2		CCXT Pro
+htx	htx	HTX	API Version 1	CCXT Certified	CCXT Pro
+huobijp	huobijp	Huobi Japan	API Version 1		CCXT Pro
+hyperliquid	hyperliquid	Hyperliquid	API Version 1		CCXT Pro
+idex	idex	IDEX	API Version 3		CCXT Pro
+independentreserve	independentreserve	Independent Reserve	API Version *		CCXT Pro
+indodax	indodax	INDODAX	API Version 2.0		
+kraken	kraken	Kraken	API Version 0		CCXT Pro
+krakenfutures	krakenfutures	Kraken Futures	API Version 3		CCXT Pro
+kucoin	kucoin	KuCoin	API Version 2	CCXT Certified	CCXT Pro
+kucoinfutures	kucoinfutures	KuCoin Futures	API Version 1	CCXT Certified	CCXT Pro
+kuna	kuna	Kuna	API Version 4		
+latoken	latoken	Latoken	API Version 2		
+lbank	lbank	LBank	API Version 2		CCXT Pro
+luno	luno	luno	API Version 1		CCXT Pro
+lykke	lykke	Lykke	API Version 2		
+mercado	mercado	Mercado Bitcoin	API Version 3		
+mexc	mexc	MEXC Global	API Version 3	CCXT Certified	CCXT Pro
+ndax	ndax	NDAX	API Version *		CCXT Pro
+novadax	novadax	NovaDAX	API Version 1		
+oceanex	oceanex	OceanEx	API Version 1		
+okcoin	okcoin	OKCoin	API Version 5		CCXT Pro
+okx	okx	OKX	API Version 5	CCXT Certified	CCXT Pro
+onetrading	onetrading	One Trading	API Version 1		CCXT Pro
+p2b	p2b	p2b	API Version 2		CCXT Pro
+paymium	paymium	Paymium	API Version 1		
+phemex	phemex	Phemex	API Version 1		CCXT Pro
+poloniex	poloniex	Poloniex	API Version *		CCXT Pro
+poloniexfutures	poloniexfutures	Poloniex Futures	API Version 1		CCXT Pro
+probit	probit	ProBit	API Version 1		CCXT Pro
+timex	timex	TimeX	API Version 1		
+tokocrypto	tokocrypto	Tokocrypto	API Version 1		
+tradeogre	tradeogre	tradeogre	API Version 2		
+upbit	upbit	Upbit	API Version 1		CCXT Pro
+wavesexchange	wavesexchange	Waves.Exchange	API Version *		
+wazirx	wazirx	WazirX	API Version 2		CCXT Pro
+whitebit	whitebit	WhiteBit	API Version 4		CCXT Pro
+woo	woo	WOO X	API Version 1	CCXT Certified	CCXT Pro
+yobit	yobit	YoBit	API Version 3		
+zaif	zaif	Zaif	API Version 1		
+zonda	zonda	Zonda

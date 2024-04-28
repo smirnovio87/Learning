@@ -1,8 +1,9 @@
 
 import ccxt
 import json
+# "binance", "bybit", "coinex", "kraken", "bitget", "ascendex", "bequant", "bigone","binanceusdm", "bingx", "bitbns", "bitfinex"
 
-name_exchanges = ["binance", "bybit"]
+name_exchanges = ["binance", "bybit", "coinex", "kraken", "bitget", "ascendex", "bequant", "bigone","binanceusdm", "bingx", "bitbns", "bitfinex"]
 symbol = 'BTC/USDT'
 
 exchanges = {}
@@ -13,23 +14,15 @@ for id in name_exchanges:
     #Данной строкой записываем в словарь exchanges id {"binance": ccxt.binance} ну и так по всем name_exchanges
     exchanges[id] = exchange()
 print (exchanges)
+
 data = {}
+
 for id, exchange in exchanges.items():
     ticker = exchange.fetch_ticker(symbol)
+    #Записываем в словарь к ключу [id]-название биржы = значение exchange.fetch_ticker(symbol) - "last"
     data[id] = ticker['last']
-print(data)
 
-data_all = {}
-for id, exchange in exchanges.items():
-    markets = exchange.load_markets()
-    for symbol in markets:
-        ticker = exchange.fetch_ticker(symbol)
-        if 'last' in ticker:
-            if symbol not in data_all:
-                data_all[symbol] = {}
-            data_all[symbol][id] = ticker['last']
-
-
+#Записываем в Json файл
 with open('btc_usdt_courses_all.json', 'w') as json_file:
-    json.dump(data_all, json_file, indent=4)
-print ("Готово")
+    json.dump(data, json_file, indent=4)
+print(data)

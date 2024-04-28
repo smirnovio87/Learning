@@ -54,5 +54,10 @@ def get_assets(request):
     asset=Assets.objects.all()
     context={"asset": asset}
     return render(request, 'site_crypto/asset.html', context)
+
+def price(request):
+    asset=Assets.objects.all()
+    context={"asset": asset}
+    return render(request, 'site_crypto/price.html', context)
     
 # Create your views here.

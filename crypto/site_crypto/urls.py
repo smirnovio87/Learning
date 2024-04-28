@@ -5,6 +5,7 @@ urlpatterns = [
    path("", views.index),
    path("exch/", views.get_exchange, name="exch"),
    path("forms/", views.forms, name="forms"),
-   path("asset/", views.get_assets, name="asset")
+   path("asset/", views.get_assets, name="asset"),
+   path("price/", views.price, name="price")
 ]
 
