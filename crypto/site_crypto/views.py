@@ -5,7 +5,7 @@ from django.http import HttpResponse, JsonResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import AssetsForm, ExchangeForm, DealsForm
-
+import json
 
 # Отображаем Index
 def index(request):
@@ -56,8 +56,10 @@ def get_assets(request):
     return render(request, 'site_crypto/asset.html', context)
 
 def price(request):
-    asset=Assets.objects.all()
-    context={"asset": asset}
+    with open('btc_usdt_courses_12.json') as file:
+         data=json.load(file)
+    context = {'context': data}
+
     return render(request, 'site_crypto/price.html', context)
-    
-# Create your views here.
+
+    # Create your views here.

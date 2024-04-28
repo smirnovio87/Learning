@@ -38,5 +38,33 @@
         </tr>
       </tbody>
     </table>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Биржа</th>
+          <th scope="col">Курс</th>
+          <th scope="col">Тест</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for key in context %}
+        <tr>
+          <th scope="row">*</th>
+          <td>{{ key }}</td>
+          <td>///</td>
+          <td>@mdo</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+
+  <div class="m-3">
+    <button type="button" class="btn btn-primary">Сохрханить результат</button>
+  </div>
   </body>
 </html>
