@@ -10,6 +10,8 @@ import json
 # Отображаем Index
 def index(request):
     return TemplateResponse(request, 'index.html')
+def subscribe(request):
+    return TemplateResponse(request, 'site_crypto/subscribe.html')
 
 # Отображаем forms
 def forms (request):
