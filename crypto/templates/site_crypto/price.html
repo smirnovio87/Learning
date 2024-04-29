@@ -50,12 +50,12 @@
       </thead>
 
       <tbody>
-        {% for key in context %}
+        {% for key, value in context.items %}
         <tr>
-          <th scope="row">*</th>
+          <th scope="row">{{ forloop.counter }}</th>
           <td>{{ key }}</td>
-          <td>///</td>
-          <td>@mdo</td>
+          <td>BTC/USDT</td>
+          <td>{{ value }}</td>
         </tr>
         {% endfor %}
       </tbody>
