@@ -4,10 +4,15 @@
 {% load static %}
 {% block css %} {% endblock %}
 {% block title %} Анализ пар {% endblock title %}
-{% block header %} Анализ криптовалютных пар. {% endblock header %}
+{% block header %}{% endblock header %}
 
 {% block content %}
+<div class="container text-center">
 
+  <h1 class="mt-4"> Анализ криптовалютных пар.</h1>
+  
+</div>
+<div class="container text-center">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -19,6 +24,7 @@
       </thead>
 
       <tbody>
+
         {% for key, value in context.items %}
         <tr>
           <th scope="row">{{ forloop.counter }}</th>
@@ -29,10 +35,8 @@
         {% endfor %}
       </tbody>
     </table>
-
-
-
-  <div class="m-3">
     <button type="button" class="btn btn-primary">Сохрханить результат</button>
-  </div>
+</div>
+
+
 {% endblock content %}

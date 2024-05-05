@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
+    {% load admin_urls %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -16,17 +17,20 @@
  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     {% comment %} Лого {% endcomment %}
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href={% url "index" %}>
         <img src="{% static 'images/logo.png' %}" alt="Bootstrap" width="200" height="62">
       </a>
     </div>
 
     <div class="container-fluid">
       {% comment %} <a class="navbar-brand" href="#">Navbar</a> {% endcomment %}
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Кнопка мобильной версии -->
+      <!-- ml-auto выровнил по правому краю но не выравнивается? -->
+      <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- ml-auto выровнил по правому краю но не выравнивается? -->
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Главная</a>
@@ -46,17 +50,28 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Disabled</a>
+            <a class="nav-link active" href="#">Как начать</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'admin:index' %}" class="btn btn-outline-success">Log in</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
 <div>{% block header %}{% endblock header %}</div>  
 <div>{% block content %}{% endblock content %}</div>    
+
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="{% url 'index' %}" class="nav-link px-2 text-body-secondary">Главная</a></li>
+      <li class="nav-item"><a href="{% url 'subscribe' %}" class="nav-link px-2 text-body-secondary">Тарифы</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Как использовать</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Техническая поддержка</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">© 2024 PRO finder</p>
+  </footer>
+</div>
 </body>
 </html>
