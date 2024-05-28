@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from site_crypto import views
 from .viewsAPI import ExcahgeList
 
@@ -9,7 +9,8 @@ urlpatterns = [
    path("asset/", views.get_assets, name="asset"),
    path("subscribe/", views.subscribe, name="subscribe"),
    path("price/", views.price, name="price"),
-   path('exchange/', ExcahgeList.as_view(), name="ExchangeList")
+   path('exchange/', ExcahgeList.as_view(), name="ExchangeList"),
+   path('accounts/', include('django.contrib.auth.urls')),
    
 ]
 
