@@ -1,5 +1,6 @@
 from django import forms
 from .models import Exchange, Assets, Deals
+
 class ExchangeForm(forms.ModelForm):
     class Meta:
         model = Exchange
@@ -12,6 +13,7 @@ class AssetsForm(forms.ModelForm):
         fields = ['name', 'type', 'price']
 
 class DealsForm(forms.ModelForm):
+    
     class Meta:
         model = Deals
         #fields = ['asset', 'buying_ID', 'selling_ID', 'buying', 'selling', 'profit', 'time']

@@ -1,0 +1,32 @@
+{% extends "site_crypto/base.html" %}
+{% load static %}
+{% block title %} Панель управления {% endblock title %}
+
+{% block content %}
+
+<div class="container text-center">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Login</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Фамилия</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+
+        <tr>
+          <th scope="row">{{ user.username }}</th>
+          <td>{{ user.firstname }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+</div>
+
+{% endblock content %}

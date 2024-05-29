@@ -55,6 +55,9 @@ def price(request):
 
     return render(request, 'site_crypto/price.html', context)
 
+def profile(request):
+    return render(request, 'site_crypto/profile.html')
+
 
 
 

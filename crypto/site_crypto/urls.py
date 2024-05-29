@@ -10,7 +10,7 @@ urlpatterns = [
    path("subscribe/", views.subscribe, name="subscribe"),
    path("price/", views.price, name="price"),
    path('exchange/', ExcahgeList.as_view(), name="ExchangeList"),
-   path('accounts/', include('django.contrib.auth.urls')),
+   path('profile/', views.profile, name="profile"),
    
 ]
 
