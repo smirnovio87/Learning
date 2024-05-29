@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'site_crypto',
     'rest_framework',
+    #'grappelli',
+
 
 ]
 
@@ -135,3 +138,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'profile'
+
+#File Browser настройки
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DIRECTORY = ''
+FILEBROWSER_DIRECTORY = ''
