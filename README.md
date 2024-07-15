@@ -1,5 +1,8 @@
-Референс - шаблон для сайта
+Референс - шаблон для сайта Crypto Finder
 https://themewagon.com/themes/free-bootstrap-5-cryptocurrency-website-template-cryptocoin/
+
+Референс - шаблон сайта разработка ПО и Сайтов
+https://themewagon.com/themes/patrix-free-responsive-bootstrap-5-landing-page-template/
 
 Посмотреть путь в какой папке находимся
 pwd
