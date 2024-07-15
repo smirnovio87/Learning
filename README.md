@@ -1,3 +1,6 @@
+Референс - шаблон для сайта
+https://themewagon.com/themes/free-bootstrap-5-cryptocurrency-website-template-cryptocoin/
+
 Посмотреть путь в какой папке находимся
 pwd
 
